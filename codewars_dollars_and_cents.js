@@ -13,6 +13,14 @@ Examples:
 Good luck! Your team knows they can count on you!
 */
 
-function formatMoney(amount){
-  // your formatting code here
+const formatMoney = (amount) => {
+  let str = amount.toString();
+  let arr = str.split('.');
+  if(arr[1] === undefined) {
+    return '$' + arr[0] + '.00';
+  } else if(arr[1].length < 2) {
+    return '$' + arr[0] + '.' + arr[1] + '0';
+  } else {
+    return '$' + arr[0] + '.' + arr[1];
+  }
 }
